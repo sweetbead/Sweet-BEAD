@@ -104,9 +104,14 @@ strong { font-weight: 700; }
 }
 .cobrand img { height: 38px; width: auto; }
 .cobrand span {
-  font-size: .8rem; color: var(--ink-muted); font-weight: 600;
+  font-size: .88rem; color: var(--ink); font-weight: 600;
   margin-left: auto; text-align: right;
 }
+.cobrand span a {
+  color: var(--navy); font-weight: 700;
+  text-decoration: underline; text-underline-offset: 3px;
+}
+.cobrand span a:hover { color: var(--navy-600); }
 
 /* =========================================================================
    Hero — night sky
@@ -126,10 +131,30 @@ strong { font-weight: 700; }
 }
 .hero .wrap {
   position: relative; z-index: 2;
-  display: block;
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: clamp(28px, 5vw, 60px);
+  align-items: center;
   padding-block: clamp(48px, 8vw, 88px);
 }
 .hero__intro { max-width: 720px; }
+
+/* Hero trust card */
+.hero__trust { justify-self: center; width: 100%; max-width: 400px; }
+.trust-card {
+  background: var(--white);
+  border-radius: var(--r-card);
+  padding: 32px 30px;
+  box-shadow: var(--shadow-lg);
+  text-align: center;
+}
+.trust-card img {
+  height: 60px; width: auto; margin: 0 auto 20px;
+}
+.trust-card p {
+  margin: 0; color: var(--ink); font-size: 1.08rem; line-height: 1.55;
+}
+.trust-card strong { color: var(--navy); }
 .logo-badge {
   display: inline-flex;
   background: var(--cream-50);
@@ -153,7 +178,7 @@ strong { font-weight: 700; }
 }
 .hero h1 .accent { color: var(--peach); }
 .hero__lead {
-  font-size: clamp(1.12rem, 2.2vw, 1.4rem);
+  font-size: clamp(1.05rem, 1.9vw, 1.25rem);
   color: #dfeaf8;
   max-width: 30ch;
   margin-bottom: 1.6em;
@@ -481,6 +506,31 @@ footer.site a { color: #cfe0f6; }
 .foot-logos .chip img { height: 30px; width: auto; }
 .foot-logos .chip--sd img { height: 40px; border-radius: 6px; }
 
+/* Clickable Sweet Dreams chip */
+.foot-logos .chip--link {
+  position: relative;
+  cursor: pointer;
+  text-decoration: none;
+  padding-right: 30px;
+  transition: transform .14s cubic-bezier(.33,0,.2,1), box-shadow .14s;
+}
+.foot-logos .chip--link::after {
+  content: "";
+  position: absolute; right: 11px; top: 50%;
+  width: 11px; height: 11px;
+  transform: translateY(-50%);
+  background: no-repeat center/contain
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23003579' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M7 17L17 7M9 7h8v8'/%3E%3C/svg%3E");
+}
+.foot-logos .chip--link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(0,0,0,.26);
+}
+.foot-logos .chip--link:focus-visible {
+  outline: 3px solid var(--peach);
+  outline-offset: 3px;
+}
+
 .foot-bottom {
   border-top: 1px solid rgba(255,255,255,.14);
   margin-top: clamp(30px, 5vw, 44px); padding-top: 22px;
@@ -494,8 +544,7 @@ footer.site a { color: #cfe0f6; }
    ========================================================================= */
 @media (max-width: 880px) {
   .hero .wrap { grid-template-columns: 1fr; padding-block: clamp(40px, 9vw, 56px); }
-  .hero__art { grid-row: 1; margin-bottom: 8px; }
-  .well { width: clamp(180px, 52vw, 240px); }
+  .hero__trust { grid-row: 2; max-width: 360px; margin-top: 4px; }
   .hero__lead { max-width: none; }
   .about { grid-template-columns: 1fr; }
   .involve { grid-template-columns: 1fr; }
