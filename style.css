@@ -535,8 +535,8 @@ section.band:first-of-type { margin-top: -8px; position: relative; z-index: 1; }
 }
 @media (max-width: 960px) {
   .criteria-cta { position: static; flex-direction: column; min-height: 0; gap: 24px; }
-  .guy-pointer { position: static; }
-  .guy-pointer img { width: 220px; }
+  .guy-pointer { position: static; width: 100%; }
+  .guy-pointer img { width: 220px; margin-left: auto; margin-right: 0; }
   .speech-bubble { position: static; width: auto; max-width: 320px; margin: 16px auto 0; }
   .speech-bubble::before { display: none; }
 }
