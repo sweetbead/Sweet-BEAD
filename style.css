@@ -59,7 +59,7 @@ body {
   text-rendering: optimizeLegibility;
 }
 img { max-width: 100%; display: block; }
-h1, h2, h3 { font-family: var(--font-display); color: var(--navy); line-height: 1.15; margin: 0; font-weight: 600; }
+h1, h2, h3 { font-family: var(--font-display); color: var(--navy); line-height: 1.15; margin: 0; font-weight: 600; overflow-wrap: break-word; }
 p { margin: 0 0 1em; text-wrap: pretty; }
 a { color: var(--navy-600); }
 strong { font-weight: 700; }
@@ -648,6 +648,9 @@ footer.site a { color: #cfe0f6; }
   .foot-grid { grid-template-columns: 1fr; }
   .foot-bottom .tag { margin-left: 0; width: 100%; }
   .facts dd { font-size: 1.3rem; width: 78px; }
+  /* Slightly tighter large buttons + full-width primary CTA for easy tapping */
+  .btn--lg { padding: 15px 22px; }
+  .criteria-cta .btn--primary { width: 100%; justify-content: center; }
 }
 
 @media (prefers-reduced-motion: reduce) {
