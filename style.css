@@ -642,7 +642,7 @@ footer.site a { color: #cfe0f6; }
 @media (max-width: 560px) {
   body { font-size: 1rem; }
   .cobrand .wrap { flex-wrap: wrap; }
-  .cobrand span { margin-left: 0; width: 100%; text-align: left; }
+  .cobrand span { margin-left: 0; width: 100%; text-align: center; }
   .hero__cta { flex-direction: column; align-items: stretch; }
   .hero__cta .btn { justify-content: center; }
   .foot-grid { grid-template-columns: 1fr; }
